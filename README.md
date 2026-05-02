@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # My Portfolio Website
 
 This is a personal portfolio website built using React and Vite to showcase my skills, projects, and background as a developer.
@@ -48,6 +47,3 @@ npm run build
 ## 🌐 Deployment
 
 This project is deployed using Vercel
-=======
-# My-Portfolio
->>>>>>> 657c3d3506d4985377c6c2d237c131e6fdcd5247
