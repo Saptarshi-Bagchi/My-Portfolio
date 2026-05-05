@@ -11,7 +11,7 @@ This is a personal portfolio website built using React and Vite to showcase my s
 
 ## 📌 Features
 
-* Introduction / Hero section
+* Introduction
 * About Me section
 * Skills overview
 * Projects showcase
