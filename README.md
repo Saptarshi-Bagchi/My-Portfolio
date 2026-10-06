@@ -1,49 +1,20 @@
-# My Portfolio Website
+# Saptarshi Bagchi Portfolio
 
-This is a personal portfolio website built using React and Vite to showcase my skills, projects, and background as a developer.
+## Run locally
 
-## 🚀 Tech Stack
-
-* React
-* Vite
-* JavaScript
-* CSS
-
-## 📌 Features
-
-* Introduction
-* About Me section
-* Skills overview
-* Projects showcase
-* Contact information
-
-## ⚙️ Getting Started
-
-Clone the repository:
-
-```
-git clone https://github.com/your-username/my-portfolio.git
-cd my-portfolio
-```
-
-Install dependencies:
-
-```
+```bash
 npm install
-```
-
-Run the development server:
-
-```
 npm run dev
 ```
 
-## 📦 Build for Production
+Build for production with `npm run build`.
 
-```
-npm run build
-```
+## Where to edit what
 
-## 🌐 Deployment
-
-This project is deployed using Vercel
+| What | File |
+| --- | --- |
+| Personal content, links, skills, projects | `src/data.js` |
+| Page section order | `src/App.jsx` |
+| Section markup | `src/components/` |
+| Colors and layout | Tailwind classes in `src/components/` |
+| Tailwind entry point | `src/index.css` |
