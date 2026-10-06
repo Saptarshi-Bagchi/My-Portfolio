@@ -8,7 +8,7 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
 function App() {
-  return <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-300 selection:text-slate-950"><Navbar /><main><Hero /><About /><Skills /><Experience /><Projects /><Contact /></main><Footer /></div>
+  return <div className="scroll-smooth min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-300 selection:text-slate-950"><Navbar /><main><Hero /><About /><Skills /><Experience /><Projects /><Contact /></main><Footer /></div>
 }
 
 export default App
