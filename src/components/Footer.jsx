@@ -1,10 +1,41 @@
-import { site } from '../data.js'
+import { site } from "../data.js";
 
 function Footer() {
   return (
     // Footer
-    <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} {site.name}</p><p>Built with React + Tailwind CSS</p></footer>
-  )
+    <footer id="contact" className="footer">
+      <div className="content-narrow footer-inner">
+        <h2 className="footer-title">Let&apos;s connect</h2>
+        <p className="footer-description">
+          Have an opportunity, idea, or question? Reach out through email or
+          find me online.
+        </p>
+        <div className="footer-links">
+          <a
+            className="footer-link"
+            href={`mailto:${site.email}`}
+          >
+            {site.email}
+          </a>
+          <a
+            className="footer-link"
+            href={site.github}
+          >
+            GitHub ↗
+          </a>
+          <a
+            className="footer-link"
+            href={site.linkedin}
+          >
+            LinkedIn ↗
+          </a>
+        </div>
+        <p className="footer-copyright">
+          © {new Date().getFullYear()} {site.name}
+        </p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

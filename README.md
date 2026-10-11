@@ -16,5 +16,5 @@ Build for production with `npm run build`.
 | Personal content, links, skills, projects | `src/data.js` |
 | Page section order | `src/App.jsx` |
 | Section markup | `src/components/` |
-| Colors and layout | Tailwind classes in `src/components/` |
-| Tailwind entry point | `src/index.css` |
+| Colors and layout | `src/index.css` |
+| Global stylesheet | `src/index.css` |

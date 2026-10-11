@@ -1,7 +1,7 @@
 // Editable site content.
 export const site = {
   name: 'Saptarshi Bagchi', initials: 'SB',
-  title: 'Full-Stack Developer | 3rd Year CSE (IoT) Student',
+  title: 'Full-Stack Developer | CSE (IoT) Student',
   tagline: 'React & Node.js developer building full-stack web apps, embedded systems integrations, and developer tools',
   email: 'saptarshibagchi.05@gmail.com', github: '#', linkedin: '#',
 }
@@ -31,9 +31,9 @@ export const skillGroups = [
 // Editable experience entries.
 export const experience = [{ company: 'Elevance Skills', role: 'Full Stack Developer Intern', dates: '06/2026 - 07/2026', description: 'Built a full-stack travel booking platform using Next.js, Tailwind CSS, Spring Boot, and MongoDB, implementing 6 major features across the complete booking and management flow.' }]
 
-// Editable project entries.
+// Drop images in public/projects/ and set the image path here.
 export const projects = [
-  { title: 'Posture Correction Desktop App', description: '6-member team; pyserial communication between ESP32 and Python backend for live sensor data; Gemini API for posture image analysis and a pose landmark model for real-time angle detection.', tech: ['Electron', 'React', 'Python'], githubLink: '#', liveLink: '#' },
-  { title: 'Make My Trip Clone', description: 'Travel platform with live flight tracking, dynamic pricing, refunds, seat/room selection, notifications, recommendations, reviews, and price tracking.', tech: ['Next.js', 'Spring Boot', 'MongoDB', 'TypeScript'], githubLink: '#', liveLink: '#' },
-  { title: 'NYC Wordle Clone', description: 'Word game with keyboard input handling and tile management, powered by the Dictionary API with more than 3000 words.', tech: ['React', 'Vite'], githubLink: '#', liveLink: '#' },
+  { title: 'Posture Correction Desktop App', image: '', description: '6-member team; pyserial communication between ESP32 and Python backend for live sensor data; Gemini API for posture image analysis and a pose landmark model for real-time angle detection.', tech: ['Electron', 'React', 'Python'], githubLink: '#', liveLink: '#' },
+  { title: 'Make My Trip Clone', image: '', description: 'Travel platform with live flight tracking, dynamic pricing, refunds, seat/room selection, notifications, recommendations, reviews, and price tracking.', tech: ['Next.js', 'Spring Boot', 'MongoDB', 'TypeScript'], githubLink: '#', liveLink: '#' },
+  { title: 'NYC Wordle Clone', image: '', description: 'Word game with keyboard input handling and tile management, powered by the Dictionary API with more than 3000 words.', tech: ['React', 'Vite'], githubLink: '#', liveLink: '#' },
 ]
