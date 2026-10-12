@@ -1,10 +1,11 @@
 import { certificates } from "../data.js";
+import { trackEvent } from "../analytics.js";
 
 function Certificates() {
   return (
     // Certificates
     <section id="certificates" className="certificates-section numbered-section fade-up">
-      <p className="section-label">06 / Certificates</p>
+      <p className="section-label">07 / Certificates</p>
       <h2 className="section-title">Certificates</h2>
       <div className="certificates-grid">
         {certificates.map((certificate) => (
@@ -27,7 +28,7 @@ function Certificates() {
               <p className="certificate-id">Certificate ID: {certificate.certificateId}</p>
             ) : null}
             {certificate.link ? (
-              <a className="certificate-link" href={certificate.link} target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+              <a className="certificate-link" href={certificate.link} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('certificate_click', { certificate: certificate.title })}>View Certificate ↗</a>
             ) : null}
           </article>
         ))}

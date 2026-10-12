@@ -8,7 +8,7 @@ function Experience() {
       className="experience-section numbered-section fade-up"
     >
       <div className="content-narrow">
-        <p className="section-label">03 / Experience</p>
+        <p className="section-label">04 / Experience</p>
         <h2 className="section-title">Experience</h2>
         <div className="experience-list">
           {experience.map((item) => (

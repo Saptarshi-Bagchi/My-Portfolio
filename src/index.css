@@ -218,8 +218,7 @@ button:focus-visible {
   line-height: 1.75rem;
 }
 
-.about-section,
-.experience-section {
+.about-section {
   border-top: 2px solid var(--ink);
 }
 
@@ -253,6 +252,57 @@ button:focus-visible {
   margin-top: 24px;
   color: var(--ink);
   line-height: 2rem;
+}
+
+/* Education */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.education-item {
+  border-left: 2px solid var(--primary);
+  padding-left: 24px;
+}
+
+.education-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.education-level {
+  margin-bottom: 8px;
+}
+
+.education-title {
+  color: var(--ink);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.education-date {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.education-field,
+.education-details {
+  margin-top: 12px;
+  color: var(--ink);
+  line-height: 1.75rem;
+}
+
+.education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  color: var(--primary);
+  font-size: 0.875rem;
 }
 
 .accomplishment-highlight {
@@ -772,9 +822,29 @@ button:focus-visible {
   .project-title,
   .certificate-title,
   .accomplishment-title,
-  .experience-title {
+  .experience-title,
+  .education-title {
     font-size: 1rem;
     line-height: 1.4rem;
+  }
+
+  .education-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .education-date {
+    margin-top: 0;
+  }
+
+  .education-item {
+    padding-left: 16px;
+  }
+
+  .education-field,
+  .education-details {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
   }
 
   .project-description,

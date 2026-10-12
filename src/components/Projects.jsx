@@ -1,10 +1,11 @@
 import { projects } from "../data.js";
+import { trackEvent } from "../analytics.js";
 
 function Projects() {
   return (
     // Projects
     <section id="projects" className="projects-section numbered-section fade-up">
-      <p className="section-label">04 / Projects</p>
+      <p className="section-label">05 / Projects</p>
       <h2 className="section-title">Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
@@ -41,12 +42,14 @@ function Projects() {
               <a
                 className="project-link"
                 href={project.githubLink}
+                onClick={() => trackEvent('project_click', { project: project.title, link_type: 'github' })}
               >
                 GitHub ↗
               </a>
               <a
                 className="project-link"
                 href={project.liveLink}
+                onClick={() => trackEvent('project_click', { project: project.title, link_type: 'live_demo' })}
               >
                 Live demo ↗
               </a>

@@ -1,4 +1,5 @@
 import { site } from "../data.js";
+import { trackEvent } from "../analytics.js";
 
 function Footer() {
   return (
@@ -20,12 +21,14 @@ function Footer() {
           <a
             className="footer-link"
             href={site.github}
+            onClick={() => trackEvent('social_link_click', { platform: 'github' })}
           >
             GitHub ↗
           </a>
           <a
             className="footer-link"
             href={site.linkedin}
+            onClick={() => trackEvent('social_link_click', { platform: 'linkedin' })}
           >
             LinkedIn ↗
           </a>

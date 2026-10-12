@@ -1,4 +1,5 @@
 import { site } from "../data.js";
+import { trackEvent } from "../analytics.js";
 
 function Hero() {
   return (
@@ -26,6 +27,7 @@ function Hero() {
             href="SBagchi_CV.pdf"
             download
             className="brutalist-button button-secondary"
+            onClick={() => trackEvent('resume_download')}
           >
             Download Resume
             <svg className="download-icon" viewBox="0 0 24 24" aria-hidden="true">

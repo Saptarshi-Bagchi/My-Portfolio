@@ -4,7 +4,7 @@ function Skills() {
   return (
     // Skills
     <section id="skills" className="skills-section numbered-section fade-up">
-      <p className="section-label">02 / Skills</p>
+      <p className="section-label">03 / Skills</p>
       <h2 className="section-title">Skills</h2>
       <div className="skills-grid">
         {skillGroups.map((group) => (

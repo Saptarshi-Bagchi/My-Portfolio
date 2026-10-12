@@ -4,7 +4,7 @@ function Accomplishments() {
   return (
     // Accomplishments
     <section id="accomplishments" className="accomplishments-section numbered-section fade-up">
-      <p className="section-label">05 / Accomplishments</p>
+      <p className="section-label">06 / Accomplishments</p>
       <h2 className="section-title">Accomplishments</h2>
       <div id="accomplishments-container" className="accomplishments-list">
         {accomplishments.map((item) => (

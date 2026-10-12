@@ -6,7 +6,7 @@ export const site = {
 }
 
 export const navigation = [
-  { label: 'About', href: '#about' }, { label: 'Skills', href: '#skills' },
+  { label: 'About', href: '#about' }, { label: 'Education', href: '#education' }, { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' }, { label: 'Projects', href: '#projects' }, { label: 'Accomplishments', href: '#accomplishments' }, { label: 'Certificates', href: '#certificates' }, { label: 'Contact', href: '#contact' },
 ]
 
@@ -14,6 +14,11 @@ export const about = {
   heading: 'About me',
   text: '3rd-year B.Tech CSE (IoT) student at Institute of Technical Education and Research, SoA University (2024-2028), Bhubaneswar, with a strong foundation in DSA, OOPS, and REST API design.',
 }
+
+export const education = [
+  { level: 'College', institution: 'Institute of Technical Education and Research, SoA University', qualification: 'B.Tech', field: 'Computer Science & Engineering (IoT)', dates: '09/2024 - 06/2028', location: 'Bhubaneswar', grade: 'CGPA: 8.19', details: 'Relevant coursework includes DSA, OOPS, and FPGA Programming.' },
+  { level: 'School', institution: 'Sudhir Memorial Institute', qualification: 'Higher Secondary Education', field: 'Science, CBSE', dates: '04/2022 - 04/2024', location: 'Madhyamgram', grade: '', details: 'Completed 10+2 under the CBSE board with Science stream.' },
+]
 
 export const accomplishments = [
   { title: 'LeetCode Streak', description: 'Maintained a consistent practice streak while working on core DSA topics and Dynamic Programming.', highlight: '250+ days' },
