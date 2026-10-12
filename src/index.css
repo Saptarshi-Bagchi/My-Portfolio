@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: 'DM Mono', monospace;
@@ -93,7 +94,9 @@ button:focus-visible {
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  max-width: none;
+  padding: 0 40px;
+  position: relative;
 }
 
 .navbar-brand {
@@ -107,6 +110,18 @@ button:focus-visible {
   gap: 24px;
   color: var(--ink);
   font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.navbar-menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 10px;
 }
 
 .navbar-brand:hover,
@@ -345,31 +360,39 @@ button:focus-visible {
   flex: 0 1 100%;
   min-height: 600px;
   flex-direction: column;
-  padding: 32px;
+  padding: 24px;
   background: var(--soft);
 }
 
 .project-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-bottom: 2px solid var(--ink);
-  border-radius: 8px 8px 0 0;
-  object-fit: cover;
+  height: auto;
+  margin: 0;
+  aspect-ratio: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.project-image:not(.project-placeholder) {
+  border: 1px solid var(--ink);
 }
 
 .project-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--lilac);
+  aspect-ratio: 16 / 10;
+  background: transparent;
   color: var(--ink);
   font-size: 2.25rem;
 }
 
 .project-title {
+  margin-top: 24px;
   color: var(--ink);
   font-size: 1.25rem;
   line-height: 1.75rem;
+  text-align: left;
 }
 
 .project-description {
@@ -383,7 +406,7 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto;
+  margin-top: 24px;
 }
 
 .project-links {
@@ -403,6 +426,10 @@ button:focus-visible {
 }
 
 /* Certificates */
+.certificates-section {
+  max-width: var(--wide-width);
+}
+
 .certificates-grid {
   display: flex;
   flex-wrap: wrap;
@@ -423,9 +450,10 @@ button:focus-visible {
 .certificate-image {
   width: 100%;
   aspect-ratio: 16 / 10;
+  background: var(--bg);
   border-bottom: 2px solid var(--ink);
   border-radius: 8px 8px 0 0;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .certificate-placeholder {
@@ -574,35 +602,247 @@ button:focus-visible {
 }
 
 /* Responsive */
-@media (min-width: 640px) {
-  .navbar-links { display: flex; }
+@media (min-width: 769px) {
   .hero-role { font-size: 1.5rem; line-height: 2rem; }
   .skill-card { flex-basis: calc((100% - 24px) / 2); }
   .experience-header { flex-direction: row; justify-content: space-between; }
 }
 
 @media (min-width: 1024px) {
-  .navbar-inner { justify-content: flex-start; }
-  .navbar-links { margin-left: 120px; }
+  .navbar-links { display: flex; }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  .navbar-links { gap: 12px; font-size: 0.75rem; }
-}
-
-@media (max-width: 899px) {
+@media (min-width: 769px) and (max-width: 899px) {
   .project-card,
   .certificate-card { flex-basis: calc((100% - 20px) / 2); }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 1023px) {
+  .navbar-inner {
+    padding: 0 16px;
+  }
+
+  .navbar-menu-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--ink);
+    background: var(--bg);
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+  }
+
+  .navbar-link {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .hero,
+  .content-narrow,
+  .projects-section,
+  .skills-section,
+  .certificates-section,
+  .accomplishments-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .numbered-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 12vw, 3.5rem);
+  }
+
+  .hero-role {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  .skill-card,
   .project-card,
   .certificate-card { flex-basis: 100%; }
+
+  .footer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 }
 
 @media (min-width: 900px) {
   .project-card,
   .certificate-card { flex-basis: calc((100% - 40px) / 3); }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 56px;
+  }
+
+  .navbar {
+    height: var(--nav-height);
+  }
+
+  .navbar-brand {
+    font-size: 0.95rem;
+  }
+
+  .hero-screen {
+    min-height: calc(85svh - var(--nav-height));
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+
+  .hero-role {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+
+  .hero-tagline,
+  .about-text,
+  .accomplishment-description,
+  .experience-description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+
+  .section-label,
+  .experience-date {
+    font-size: 0.7rem;
+  }
+
+  .numbered-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .brutalist-button {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .certificates-grid {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .skill-card,
+  .project-card,
+  .certificate-card {
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .skill-title,
+  .project-title,
+  .certificate-title,
+  .accomplishment-title,
+  .experience-title {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .project-description,
+  .certificate-issuer,
+  .certificate-id {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .certificate-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .skill-tags,
+  .project-tags {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  .project-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 0.75rem;
+  }
+
+  .certificate-link {
+    font-size: 0.75rem;
+  }
+
+  .accomplishments-list {
+    margin-top: 20px;
+  }
+
+  .accomplishment-item + .accomplishment-item {
+    margin-top: 20px;
+  }
+
+  .brutalist-card,
+  .brutalist-button {
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .brutalist-card:hover,
+  .brutalist-button:hover {
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-screen {
+    min-height: calc(80svh - var(--nav-height));
+  }
+
+  .hero-tagline {
+    font-size: 0.8rem;
+  }
+
+  .numbered-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
