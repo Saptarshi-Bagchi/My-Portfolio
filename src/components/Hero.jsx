@@ -17,16 +17,20 @@ function Hero() {
         </p>
         <div className="hero-actions">
           <a
-            href="#projects"
+            href="#contact"
             className="brutalist-button button-primary"
           >
-            View projects
+            Contact Me
           </a>
           <a
-            href="#contact"
+            href="SBagchi_CV.pdf"
+            download
             className="brutalist-button button-secondary"
           >
-            Contact me
+            Download Resume
+            <svg className="download-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+            </svg>
           </a>
         </div>
       </div>

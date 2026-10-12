@@ -165,6 +165,17 @@ button:focus-visible {
   margin-top: 36px;
 }
 
+.download-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 8px;
+  vertical-align: -0.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
 /* Sections */
 .numbered-section {
   padding-top: var(--section-gap);
@@ -197,7 +208,20 @@ button:focus-visible {
   border-top: 2px solid var(--ink);
 }
 
-.skills-section {
+.about-section {
+  padding-bottom: 32px;
+}
+
+.accomplishments-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-right: 24px;
+  padding-bottom: 32px;
+  padding-left: 24px;
+}
+
+.skills-section,
+.certificates-section {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -205,39 +229,52 @@ button:focus-visible {
   padding-left: 24px;
 }
 
-/* About */
-.about-grid {
-  display: grid;
-  gap: 40px;
+.skills-section {
+  padding-top: 32px;
 }
 
+/* About */
 .about-text {
   margin-top: 24px;
   color: var(--ink);
   line-height: 2rem;
 }
 
-.accomplishments {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
-  color: var(--ink);
+.accomplishment-highlight {
+  color: var(--primary);
 }
 
-.accomplishment {
-  border-left: 2px solid var(--primary);
-  padding-left: 16px;
+.accomplishments-list {
+  margin-top: 24px;
+}
+
+.accomplishment-item + .accomplishment-item {
+  margin-top: 24px;
+}
+
+.accomplishment-title {
+  color: var(--ink);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.accomplishment-description {
+  margin-top: 8px;
+  color: var(--ink);
+  line-height: 2rem;
 }
 
 /* Skills */
 .skills-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   margin-top: 40px;
 }
 
 .skill-card {
+  flex: 0 1 100%;
   padding: 24px;
   background: var(--soft);
 }
@@ -295,17 +332,20 @@ button:focus-visible {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
   gap: 20px;
   margin-top: 40px;
 }
 
 .project-card {
   display: flex;
-  height: 100%;
+  flex: 0 1 100%;
+  min-height: 600px;
   flex-direction: column;
-  padding: 24px;
+  padding: 32px;
   background: var(--soft);
 }
 
@@ -343,7 +383,7 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 24px;
+  margin-top: auto;
 }
 
 .project-links {
@@ -359,6 +399,69 @@ button:focus-visible {
 }
 
 .project-link:hover {
+  background: var(--pop);
+}
+
+/* Certificates */
+.certificates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.certificate-card {
+  display: flex;
+  flex: 0 1 100%;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--soft);
+}
+
+.certificate-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+.certificate-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lilac);
+  color: var(--ink);
+  font-size: 2.25rem;
+}
+
+.certificate-title {
+  color: var(--ink);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.certificate-issuer,
+.certificate-id {
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.certificate-id {
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.certificate-link {
+  margin-top: auto;
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.certificate-link:hover {
   background: var(--pop);
 }
 
@@ -474,20 +577,32 @@ button:focus-visible {
 @media (min-width: 640px) {
   .navbar-links { display: flex; }
   .hero-role { font-size: 1.5rem; line-height: 2rem; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .skill-card { flex-basis: calc((100% - 24px) / 2); }
   .experience-header { flex-direction: row; justify-content: space-between; }
 }
 
-@media (min-width: 768px) {
-  .about-grid { grid-template-columns: 1.3fr 1fr; }
+@media (min-width: 1024px) {
+  .navbar-inner { justify-content: flex-start; }
+  .navbar-links { margin-left: 120px; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .navbar-links { gap: 12px; font-size: 0.75rem; }
 }
 
 @media (max-width: 899px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card,
+  .certificate-card { flex-basis: calc((100% - 20px) / 2); }
 }
 
 @media (max-width: 599px) {
-  .projects-grid { grid-template-columns: 1fr; }
+  .project-card,
+  .certificate-card { flex-basis: 100%; }
+}
+
+@media (min-width: 900px) {
+  .project-card,
+  .certificate-card { flex-basis: calc((100% - 40px) / 3); }
 }
 
 @media (prefers-reduced-motion: reduce) {
