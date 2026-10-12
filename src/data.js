@@ -22,8 +22,8 @@ export const accomplishments = [
 
 export const skillGroups = [
   { name: 'Languages', skills: ['Java', 'Python', 'HTML', 'CSS', 'JavaScript', 'TypeScript'] },
-  { name: 'Frameworks & Libraries', skills: ['React', 'Next.js', 'Node.js', 'Spring Boot', 'Tailwind CSS', 'Vite'] },
-  { name: 'Tools & Platforms', skills: ['Git', 'GitHub', 'Postman', 'Vercel', 'Maven'] },
+  { name: 'Frameworks & Libraries', skills: ['React', 'Express', 'Next.js', 'Node.js', 'Spring Boot', 'Tailwind CSS', 'Framer Motion'] },
+  { name: 'Tools & Platforms', skills: ['Git', 'GitHub', 'Maven', 'Docker', 'Postman', 'Vercel'] },
   { name: 'Core Concepts', skills: ['DSA', 'OOPS', 'REST APIs', 'DBMS', 'FPGA Programming'] },
   { name: 'Databases', skills: ['MongoDB', 'PostgreSQL'] },
 ]
