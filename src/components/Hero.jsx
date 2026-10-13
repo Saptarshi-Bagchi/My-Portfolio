@@ -24,8 +24,8 @@ function Hero() {
             Contact Me
           </a>
           <a
-            href="SBagchi_CV.pdf"
-            download
+            href="/SBagchi_CV.pdf"
+            download="SBagchi_CV.pdf"
             className="brutalist-button button-secondary"
             onClick={() => trackEvent('resume_download')}
           >
